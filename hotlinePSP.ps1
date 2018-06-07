@@ -40,7 +40,7 @@
 function hasAdobe {
 
 	#define parameters
-	[CmdletBinding(DefaultParameterName='Hostname')]
+	[CmdletBinding(DefaultParameterSetName='Hostname')]
 	param (
 		[Parameter(Mandatory,ParameterSetName='Hostname')]
 		[string]$Hostname,
