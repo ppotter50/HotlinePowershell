@@ -1,42 +1,3 @@
-<#
-
-.SYNOPSIS
-This is a script used to determine if a computer has access to the Adobe CC Suite
-
-.DESCRIPTION
-This script will either tell you whether or not a computer has access to the Adobe CC Suite or it will generate a list of computers that do have access to the Adobe CC Suite based on a search.
-
-This script acheives this by pulling all active directory computers with the identity "CAEN CLSE 2017 ADOBE CC" and sorts them based on a string input
-
-If a hostname is entered the script will look for an exact match and give a true or false response as to whether the computer has access to Adobe CC
-If a search is entered the script will display a list of all of the hostnames matching that search
-
-.PARAMETER <Hostname>
-Enter the hostname you would like to check for Adobe CC access
-
-.PARAMETER <Search>
-Searches for hostnames that contain the entered string
-If no string is entered all hosts with Adobe CC access will be listed
-
-.EXAMPLE
-hasAdobe -Hostname "CAEN-HOTLINEP05"
-
-Test if hostname CAEN-HOTLINEP05 has Adobe CC access
-
-.EXAMPLE
-hasAdobe -Search "DC"
-
-Get all computers with Adobe CC access whose uniquename contains "dc"
-
-.OUTPUTS
-If a hostname is entered text denoting a true or false response is output
-If a search is entered a list of object name properties is output preceeded by descriptor text
-
-.NOTES
-Future development: get hostname parameter to take multiple inputs and input from a file
-	
-#>
-
 function hasAdobe {
 
 	#define parameters
@@ -81,4 +42,42 @@ function hasAdobe {
 			Write-Host "Your wildcard matched no hostnames with access to Adobe CC."
 		}
 	}
+	<#
+
+	.SYNOPSIS
+	This is a script used to determine if a computer has access to the Adobe CC Suite
+
+	.DESCRIPTION
+	This script will either tell you whether or not a computer has access to the Adobe CC Suite or it will generate a list of computers that do have access to the Adobe CC Suite based on a search.
+
+	This script acheives this by pulling all active directory computers with the identity "CAEN CLSE 2017 ADOBE CC" and sorts them based on a string input
+
+	If a hostname is entered the script will look for an exact match and give a true or false response as to whether the computer has access to Adobe CC
+	If a search is entered the script will display a list of all of the hostnames matching that search
+
+	.PARAMETER <Hostname>
+	Enter the hostname you would like to check for Adobe CC access
+
+	.PARAMETER <Search>
+	Searches for hostnames that contain the entered string
+	If no string is entered all hosts with Adobe CC access will be listed
+
+	.EXAMPLE
+	hasAdobe -Hostname "CAEN-HOTLINEP05"
+
+	#Test if hostname CAEN-HOTLINEP05 has Adobe CC access
+
+	.EXAMPLE
+	hasAdobe -Search "DC"
+
+	#Get all computers with Adobe CC access whose uniquename contains "dc"
+
+	.OUTPUTS
+	If a hostname is entered text denoting a true or false response is output
+	If a search is entered a list of object name properties is output preceeded by descriptor text
+
+	.NOTES
+	Future development: get hostname parameter to take multiple inputs and input from a file
+	
+	#>
 }
