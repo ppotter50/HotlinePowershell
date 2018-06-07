@@ -19,12 +19,14 @@ Searches for hostnames that contain the entered string
 If no string is entered all hosts with Adobe CC access will be listed
 
 .EXAMPLE
-#Test if hostname CAEN-HOTLINEP05 has Adobe CC access
 hasAdobe -Hostname "CAEN-HOTLINEP05"
 
+Test if hostname CAEN-HOTLINEP05 has Adobe CC access
+
 .EXAMPLE
-#Get all computers with Adobe CC access whose uniquename contains "dc"
 hasAdobe -Search "DC"
+
+Get all computers with Adobe CC access whose uniquename contains "dc"
 
 .OUTPUTS
 If a hostname is entered text denoting a true or false response is output
