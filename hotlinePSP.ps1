@@ -36,7 +36,7 @@ If a search is entered a list of object name properties is output preceeded by d
 
 .NOTES
 Future development: get hostname parameter to take multiple inputs and input from a file
-	
+
 #>
 
 function hasAdobe {
@@ -69,7 +69,7 @@ function hasAdobe {
 
 		#generate list of computers matching that wildcard search with access to Adobe CC
 		$result = Get-ADGroupMember -Identity "CAEN CLSE 2017 ADOBE CC" | Where-Object{$_.name -like $Search} | Select-Object -property "name" | Sort-Object -Property "name"
-	
+
 		#output result
 		if ($Search -eq "**") {
 			Write-Host "Here is a list of all hostnames with access to Adobe CC"
