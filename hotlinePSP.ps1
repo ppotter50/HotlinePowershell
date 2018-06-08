@@ -13,20 +13,22 @@ If a search is entered the script will display a list of all of the hostnames ma
 
 .PARAMETER <Hostname>
 Enter the hostname you would like to check for Adobe CC access
+Quotes are not needed
 
 .PARAMETER <Search>
 Searches for hostnames that contain the entered string
-If no string is entered all hosts with Adobe CC access will be listed
+If only a wildcard is entered all hostnames with Adobe CC access will be listed
+Quotes are not needed
 
 .EXAMPLE
-hasAdobe -Hostname "CAEN-HOTLINEP05"
+hasAdobe -Hostname CAEN-HOTLINEP05
 
 #Test if hostname CAEN-HOTLINEP05 has Adobe CC access
 
 .EXAMPLE
-hasAdobe -Search "DC"
+hasAdobe -Search DC
 
-#Get all computers with Adobe CC access whose uniquename contains "dc"
+#Get all computers with Adobe CC access whose hostname contains "dc"
 
 .OUTPUTS
 If a hostname is entered text denoting a true or false response is output
